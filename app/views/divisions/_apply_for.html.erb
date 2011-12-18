@@ -1,0 +1,5 @@
+<%= form_for current_user.takings.build(:division_id => @division.id),
+					:remote => true do |f| %>
+  <div><%= f.hidden_field :division_id %></div>
+  <div class="actions"><%= f.submit "Apply now!" %></div>
+<% end %>

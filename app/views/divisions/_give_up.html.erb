@@ -1,0 +1,5 @@
+<%= form_for current_user.takings.find_by_division_id(@division),
+					:html => { :method => :delete },
+					:remote => true do |f| %>
+  <div class="actions"><%= f.submit "I give up" %></div>
+<% end %>

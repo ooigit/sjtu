@@ -1,6 +1,6 @@
 <% def division_tree divisions%>
   <% divisions.each do |d| %>
-    <%= "_____" * (d.level + 1) %>
+    <%= "_____" * (d.level) %>
 	<%= link_to "#{d.description}", d %><br />
 	<% division_tree d.subs %>
   <% end %>

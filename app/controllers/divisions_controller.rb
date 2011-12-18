@@ -15,6 +15,9 @@ class DivisionsController < ApplicationController
   def show
     @division = Division.find(params[:id])
 	@divisions = @division.subs
+	@teachers = @division.teachers
+	@tas = @division.tas
+	@students = @division.students
 
     respond_to do |format|
       format.html # show.html.erb

@@ -1,18 +1,37 @@
-<p id="notice"><%= notice %></p>
+<div class="span-18">
+  <h3><%= link_to @division.course.name, @division.course %></h3>
+  <h4><%= @division.description %></h4>
+  <%= render 'taking_form' %>
+  
+</div>
+
+<div class="span-6 last">
 
 <p>
-  <b>Course:</b>
-  <%= link_to @division.course.name, @division.course %>
+  <b>Teachers: <%= @teachers.count %></b>
+  <ul>
+    <% @teachers.each do |t| %>
+      <li><%= link_to t.name, t %></li>
+    <% end %>
+  </ul>
+</p>
+
+<p>
+  <b>TAs: <%= @students.count %></b>
+  <ul>
+    <% @tas.each do |t| %>
+      <li><%= link_to t.name, t %></li>
+    <% end %>
+  </ul>
+</p>
+
+<p>
+  <b>Students: <%= @students.count %></b>
 </p>
 
 <p>
   <b>Parent division:</b>
   <%= link_to @division.parent.description, @division.parent %>
-</p>
-
-<p>
-  <b>Description:</b>
-  <%= @division.description %>
 </p>
 
 <p>
@@ -22,3 +41,5 @@
 
 <%= link_to 'Edit', edit_division_path(@division) %> |
 <%= link_to 'Back', divisions_path %>
+
+</div>
