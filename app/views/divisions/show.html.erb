@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Course:</b>
+  <%= link_to @division.course.name, @division.course %>
+</p>
+
+<p>
+  <b>Parent division:</b>
+  <%= link_to @division.parent.description, @division.parent %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @division.description %>
+</p>
+
+<p>
+  <b>Division tree:</b><br />
+  <%= render 'shared/division_tree' %>
+</p>
+
+<%= link_to 'Edit', edit_division_path(@division) %> |
+<%= link_to 'Back', divisions_path %>

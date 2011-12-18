@@ -1,5 +1,8 @@
 class SessionsController < ApplicationController
   def new
+    if signed_in?
+		redirect_to root_path, :notice => "You have already signed in!"
+	end
   end
 
   def create
@@ -11,13 +14,13 @@ class SessionsController < ApplicationController
 	  flash.now.alert = "Invalid password"
 	  render "new"
 	else
-	  session[:user_id] = user.id
-	  redirect_to root_url, :notice => "Logged in!"
+	  sign_in user
+	  redirect_to root_url, :notice => "Signed in!"
 	end
   end
 
   def destroy
-    session[:user_id] = nil
-	redirect_to root_url, :notice => "Logged out!"
+    sign_out
+	redirect_to root_url, :notice => "Signed out!"
   end
 end

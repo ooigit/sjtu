@@ -14,6 +14,7 @@ class CoursesController < ApplicationController
   # GET /courses/1.json
   def show
     @course = Course.find(params[:id])
+	@divisions = @course.root_divisions
 
     respond_to do |format|
       format.html # show.html.erb

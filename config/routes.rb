@@ -1,12 +1,14 @@
 Sjtu::Application.routes.draw do
+  resources :divisions
+
   resources :courses
 
   resources :users
   resources :sessions, :only => [:new, :create, :destroy]
 
-  match '/signup', :to => 'user#new'
-  match '/signin', :to => 'session#new'
-  match '/signout', :to => 'session#destroy'
+  match '/signup', :to => 'users#new'
+  match '/signin', :to => 'sessions#new'
+  match '/signout', :to => 'sessions#destroy'
 
   root :to => 'pages#home'
   match '/help', :to => 'pages#help'
