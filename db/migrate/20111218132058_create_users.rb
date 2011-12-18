@@ -14,10 +14,10 @@ class CreateUsers < ActiveRecord::Migration
       t.string :nationality
       t.string :political_status
       t.string :identification_number
-      t.boolean :is_teacher
-      t.boolean :is_ta
-      t.boolean :is_student
-      t.boolean :is_administrator
+      t.boolean :is_teacher, :default => false
+      t.boolean :is_ta, :default => false
+      t.boolean :is_student, :default => false
+      t.boolean :is_administrator, :default => false
 
       t.timestamps
     end

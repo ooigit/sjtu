@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Code:</b>
+  <%= @course.code %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%= @course.name %>
+</p>
+
+<p>
+  <b>Year:</b>
+  <%= @course.year %>
+</p>
+
+<p>
+  <b>Semester:</b>
+  <%= @course.semester %>
+</p>
+
+<p>
+  <b>Public:</b>
+  <%= @course.public %>
+</p>
+
+<p>
+  <b>Open for apply:</b>
+  <%= @course.open_for_apply %>
+</p>
+
+<p>
+  <b>Finished:</b>
+  <%= @course.finished %>
+</p>
+
+
+<%= link_to 'Edit', edit_course_path(@course) %> |
+<%= link_to 'Back', courses_path %>

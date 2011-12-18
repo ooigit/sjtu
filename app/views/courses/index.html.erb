@@ -1,0 +1,35 @@
+<h1>Listing courses</h1>
+
+<table>
+  <tr>
+    <th>Code</th>
+    <th>Name</th>
+    <th>Year</th>
+    <th>Semester</th>
+    <th>Public</th>
+    <th>Open for apply</th>
+    <th>Finished</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @courses.each do |course| %>
+  <tr>
+    <td><%= course.code %></td>
+    <td><%= course.name %></td>
+    <td><%= course.year %></td>
+    <td><%= course.semester %></td>
+    <td><%= course.public %></td>
+    <td><%= course.open_for_apply %></td>
+    <td><%= course.finished %></td>
+    <td><%= link_to 'Show', course %></td>
+    <td><%= link_to 'Edit', edit_course_path(course) %></td>
+    <td><%= link_to 'Destroy', course, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Course', new_course_path %>

@@ -11,7 +11,19 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111218132058) do
+ActiveRecord::Schema.define(:version => 20111218145714) do
+
+  create_table "courses", :force => true do |t|
+    t.string   "code"
+    t.string   "name"
+    t.string   "year"
+    t.string   "semester"
+    t.boolean  "public"
+    t.boolean  "open_for_apply"
+    t.boolean  "finished"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", :force => true do |t|
     t.string   "email"
@@ -27,10 +39,10 @@ ActiveRecord::Schema.define(:version => 20111218132058) do
     t.string   "nationality"
     t.string   "political_status"
     t.string   "identification_number"
-    t.boolean  "is_teacher"
-    t.boolean  "is_ta"
-    t.boolean  "is_student"
-    t.boolean  "is_administrator"
+    t.boolean  "is_teacher",            :default => false
+    t.boolean  "is_ta",                 :default => false
+    t.boolean  "is_student",            :default => false
+    t.boolean  "is_administrator",      :default => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -1,4 +1,6 @@
 Sjtu::Application.routes.draw do
+  resources :courses
+
   resources :users
   resources :sessions, :only => [:new, :create, :destroy]
 
