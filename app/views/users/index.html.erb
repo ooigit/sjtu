@@ -1,0 +1,55 @@
+<h1>Listing users</h1>
+
+<table>
+  <tr>
+    <th>Email</th>
+    <th>Password digest</th>
+    <th>Sjtu</th>
+    <th>Class</th>
+    <th>Name</th>
+    <th>Phone</th>
+    <th>Grade</th>
+    <th>Gender</th>
+    <th>Birthday</th>
+    <th>Hometown</th>
+    <th>Nationality</th>
+    <th>Political status</th>
+    <th>Identification number</th>
+    <th>Is teacher</th>
+    <th>Is ta</th>
+    <th>Is student</th>
+    <th>Is administrator</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @users.each do |user| %>
+  <tr>
+    <td><%= user.email %></td>
+    <td><%= user.password_digest %></td>
+    <td><%= user.sjtu_id %></td>
+    <td><%= user.class_id %></td>
+    <td><%= user.name %></td>
+    <td><%= user.phone %></td>
+    <td><%= user.grade %></td>
+    <td><%= user.gender %></td>
+    <td><%= user.birthday %></td>
+    <td><%= user.hometown %></td>
+    <td><%= user.nationality %></td>
+    <td><%= user.political_status %></td>
+    <td><%= user.identification_number %></td>
+    <td><%= user.is_teacher %></td>
+    <td><%= user.is_ta %></td>
+    <td><%= user.is_student %></td>
+    <td><%= user.is_administrator %></td>
+    <td><%= link_to 'Show', user %></td>
+    <td><%= link_to 'Edit', edit_user_path(user) %></td>
+    <td><%= link_to 'Destroy', user, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New User', new_user_path %>

@@ -1,4 +1,11 @@
 Sjtu::Application.routes.draw do
+  resources :users
+  resources :sessions, :only => [:new, :create, :destroy]
+
+  match '/signup', :to => 'user#new'
+  match '/signin', :to => 'session#new'
+  match '/signout', :to => 'session#destroy'
+
   root :to => 'pages#home'
   match '/help', :to => 'pages#help'
   match '/about', :to => 'pages#about'

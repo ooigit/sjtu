@@ -1,0 +1,89 @@
+<%= form_for(@user) do |f| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+      <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :password %><br />
+    <%= f.password_field :password %>
+  </div>
+  <div class="field">
+    <%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation %>
+  </div>
+  <div class="field">
+    <%= f.label :sjtu_id %><br />
+    <%= f.text_field :sjtu_id %>
+  </div>
+  <div class="field">
+    <%= f.label :class_id %><br />
+    <%= f.text_field :class_id %>
+  </div>
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :phone %><br />
+    <%= f.text_field :phone %>
+  </div>
+  <div class="field">
+    <%= f.label :grade %><br />
+    <%= f.text_field :grade %>
+  </div>
+  <div class="field">
+    <%= f.label :gender %><br />
+    <%= f.text_field :gender %>
+  </div>
+  <div class="field">
+    <%= f.label :birthday %><br />
+    <%= f.date_select :birthday %>
+  </div>
+  <div class="field">
+    <%= f.label :hometown %><br />
+    <%= f.text_field :hometown %>
+  </div>
+  <div class="field">
+    <%= f.label :nationality %><br />
+    <%= f.text_field :nationality %>
+  </div>
+  <div class="field">
+    <%= f.label :political_status %><br />
+    <%= f.text_field :political_status %>
+  </div>
+  <div class="field">
+    <%= f.label :identification_number %><br />
+    <%= f.text_field :identification_number %>
+  </div>
+  <div class="field">
+    <%= f.label :is_teacher %><br />
+    <%= f.check_box :is_teacher %>
+  </div>
+  <div class="field">
+    <%= f.label :is_ta %><br />
+    <%= f.check_box :is_ta %>
+  </div>
+  <div class="field">
+    <%= f.label :is_student %><br />
+    <%= f.check_box :is_student %>
+  </div>
+  <div class="field">
+    <%= f.label :is_administrator %><br />
+    <%= f.check_box :is_administrator %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
