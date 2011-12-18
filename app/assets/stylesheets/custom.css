@@ -1,0 +1,18 @@
+/* header */
+
+header {
+	float: right;
+	margin-bottom: -10px;
+}
+
+nav ul li {
+	list-style-type: none;
+	display: inline-block;
+	margin: 5px;
+	padding: 0px 10px;
+}
+
+/* footer */
+footer {
+	text-align: center;
+}

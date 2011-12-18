@@ -1,4 +1,8 @@
 Sjtu::Application.routes.draw do
+  root :to => 'pages#home'
+  match '/help', :to => 'pages#help'
+  match '/about', :to => 'pages#about'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
